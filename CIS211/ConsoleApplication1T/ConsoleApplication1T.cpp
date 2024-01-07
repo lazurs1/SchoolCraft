@@ -2,6 +2,7 @@
 //
 
 #include <iostream>
+#include <string>
 //
 //int main()
 //{
@@ -78,11 +79,30 @@ using namespace std;
         //cout << " suites.\n";
 
         //2-11
-        float distance = 1.496E8;
-        double mass = 1.989E30;
+        //float distance = 1.496E08;
+        //double mass = 1.989E30;
 
-        cout << "The Sun is " << distance << " kilometers away.\n";
-        cout << "The Sun\'s mass is " << mass << " kilograms.\n";
+        //cout << "The Sun is " << distance << " kilometers away.\n";
+        //cout << "The Sun\'s mass is " << mass << " kilograms.\n";
+
+        //2-15 String
+        //string movieTitle;
+        //movieTitle = "Wheels fo Fury";
+        //cout << "My favorite movie is " << movieTitle << endl;
+
+        //2-16
+        //bool boolValue;
+        //boolValue = true;
+        //cout << boolValue << endl;
+        //boolValue = false;
+        //cout << boolValue << endl;
+
+        //2-17
+        //double apple;
+        //cout << "The size of a short interger is " << sizeof(short) << " bytes. \n";
+        //cout << "The size of a long interger is " << sizeof(long) << " bytes. \n";
+        //cout << "An apple can be eaten in " << sizeof(apple) << " bytes. \n";
+
 
 
     return 0;
