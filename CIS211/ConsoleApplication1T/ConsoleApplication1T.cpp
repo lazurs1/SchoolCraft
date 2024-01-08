@@ -104,6 +104,87 @@ using namespace std;
         //cout << "An apple can be eaten in " << sizeof(apple) << " bytes. \n";
 
 
+        //2-18
+        //string month = "February";
+        //int year, days = 29;
+        //year = 1776;
+        //cout << "In " << year << " " << month << " had " << days << " days.\n";
+
+        ////2-20           
+        //double  basePayRate = 18.25,
+        //    overtimePayRate = 27.38,
+        //    regularHours = 40.0,
+        //    overtimeHours = 10,
+        //    regularWages,
+        //    overtimeWages,
+        //    totalWages;
+        //// calc regular wages
+        //regularWages = basePayRate * regularHours;
+        ////calc overtime wages
+        //overtimeWages = overtimePayRate * overtimeHours;
+        ////total wages = regular +overtime
+        //totalWages = regularWages + overtimeWages;
+
+        //cout << "Wages for this week are $" << totalWages << endl;
+
+        //2-21
+        //int totalSeconds = 125,
+        //minutes,
+        //seconds;
+
+        //minutes = totalSeconds / 60;
+        //seconds = totalSeconds % 60;
+
+        //cout << totalSeconds << " seconds is the equivalent to ";
+        //cout << minutes << " minutes and " << seconds << " seconds\n";
+        
+        //3-1
+        //int length, width, area;
+
+        //cout << "This program calculates the area of a rectangle.\n";
+
+        //// user imput
+        //cout << "What is the length of the rectangle? ";
+        //cin >> length;
+        //cout << "What is the width of the rectangle? ";
+        //cin >> width;
+
+        ////comuter area
+        //area = length * width;
+        //cout << "The area of the rectangle is " << area << endl;
+ 
+
+
+        //auto x = 4 + 17 % 2 - 1;
+        //cout << x << endl;
+        //cout << 17 % 2 << endl;
+        
+
+        ////3-7
+        //int     books,
+        //        months;
+
+        //double booksPerMonth;
+
+        ////Get user inputs
+        //cout << "How many books do you plan to read? ";
+        //cin >> books;
+
+        //cout << "How many months will it take you to read them? ";
+        //cin >> months;
+
+        //// Compute and siplay books read per months
+        //booksPerMonth = static_cast<double>(books) / months;
+        //cout << "That is " << booksPerMonth << " books per month.\n";
+
+
+
+
+
+
+
+
+
 
     return 0;
 }
