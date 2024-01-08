@@ -21,7 +21,6 @@
 //   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
 
 
-#include <iostream>
 using namespace std;
     int main()
 {       
@@ -81,7 +80,6 @@ using namespace std;
         //2-11
         //float distance = 1.496E08;
         //double mass = 1.989E30;
-
         //cout << "The Sun is " << distance << " kilometers away.\n";
         //cout << "The Sun\'s mass is " << mass << " kilograms.\n";
 
