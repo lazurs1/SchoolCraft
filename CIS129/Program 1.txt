@@ -1,0 +1,29 @@
+Assignment Content
+
+Prior to submitting this assignment, make sure you have completed the associated Learning Activities and Practices Exercises in the module.
+
+
+
+In this module you learned about the purpose of computer programming. You also learned how to begin designing programs using flowcharts and pseudocode.
+
+
+
+Draw the flowchart and pseudocode for a program allowing the user to enter a value for one edge of a cube.
+
+
+
+The program should calculate the surface area of one side of the cube, the surface area of the cube and its volume.
+The program should output all of the results.
+Submit the flowchart and pseudocode together with draw.io
+Make a working version of this program using Python.
+
+
+Complete the flowchart and pseudocode using draw.io. Include your pseudocode by adding a “square shape” next to your flowchart and populating it with your pseudocode for the program. Export your work in PDF format and attach it in the assignment submission area by the listed due date.
+
+
+
+Complete the Python code using IDLE. Save your .py file and attach it in the assignment submission area by the listed due date. 
+
+ 
+
+This assignment is worth 20 points and will be evaluated using the CIS 129 Assignment Rubric.

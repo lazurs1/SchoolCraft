@@ -1,0 +1,78 @@
+Programs that make a computer useful for everyday tasks are known as ___________. A
+System Software
+Operation System
+Application Software
+Utility Programs
+None of the above
+
+Which of the following is not an example of operating system software? A
+Microsoft Word
+Windows Vista
+Linux
+Mac OS X
+None of these
+
+
+
+What function(s) does an interpreter perform with the instructions in a high-level programming language? A
+Translates
+Compiles
+Compiles and Translates
+Executes
+Translates and Execute
+
+The term used for a set of rules that must be strictly followed when writing a program is: B
+Semantics
+Syntax
+Grammar
+Key words
+Punctuations
+
+_______________ was the first high-level programming language designed that could perform complex mathematical calculations. D
+COBOL
+C++
+Java
+FORTRAN
+Ada
+
+Which computer language uses short words known as mnemonics for writing programs? A
+Assembly
+Java
+C#
+Pascal
+Visual Basic
+
+
+The process known as the ___________ cycle is used by the CPU to execute instructions in a program. C
+Decode- fetch-execute
+Decode-execute-fetch
+Fetch-decode-execute
+Fetch-execute-decode
+Execute-fetch-decode
+
+
+Question 8
+1
+ Point
+
+
+Which of the following is not a microprocessor manufacturing company? B
+Intel
+Dell
+AMD
+Motorola
+None of the above
+
+The following is an example of an instruction written in which computer language? 10110000  D
+C++ 
+Assembly language
+JAVA
+Machine language
+C #
+
+What is the encoding technique called that is used to store negative numbers in the computer’s memory? D
+Unicode
+ASCII
+Floating-point notation
+Twos complement
+None of the above

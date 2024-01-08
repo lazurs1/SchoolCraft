@@ -1,0 +1,11 @@
+Start
+imput length for one edge of a cube
+Calc 1 side area
+Calc cube area A=6a^2
+Calc cube vol
+output info
+Print surface area 1 side
+Print surface area whole cube
+print cube volume
+Stop
+
