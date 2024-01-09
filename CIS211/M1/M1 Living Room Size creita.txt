@@ -1,0 +1,20 @@
+
+Assignment Content
+
+Prior to submitting this assignment, make sure you have completed the associated Learning Activities and Practices Exercises in the module.
+
+
+
+In this module you learned about how programming languages and computers work together to solve a problem and provide benefit to a user or users. You also learned how to create your first C++ program.
+
+
+
+For this assignment, write a program that calculates the size of a living room in a home. The program should prompt the user to enter the length and width of the room in feet. It should then calculate and display the number of square feet of the room.
+
+
+
+Complete the C++ code using Visual Studio or Xcode, compress (zip) and upload the entire project folder to the submission area by the listed due date.
+
+
+
+This assignment is worth 20 points and will be evaluated using the CIS 211 Assignment Rubric.
