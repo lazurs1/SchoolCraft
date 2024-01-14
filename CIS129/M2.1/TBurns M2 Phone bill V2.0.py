@@ -30,7 +30,7 @@ This assignment is worth 20 points and will be evaluated using the CIS 129 Assig
 #dict time:minutes- Data set was not specified or input was was not specified. Military time being used.
 #This data set could be pulled from a mySQL DB (import mysql.connector-pip install mysql or API (using import results- pip install results) Or other data source
 
-#k=Time, V=length of call
+#key=Time, Value=length of call
 phoneCallsDict = {
   1000: 20.7,
   1100: 5,
@@ -45,7 +45,7 @@ totalCharge=float(0.0)
 #Set a value of per minute charges
 dateTimeRate=.20
 def getTotalcharges():
-    addCharge= float()
+    addCharge= float() #local variable to use for return
     #iteriate through the calls that were made (KEY)
     for key in phoneCallsDict:
     #figure out day time- 6AM-8PM
