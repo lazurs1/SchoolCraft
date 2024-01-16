@@ -1,0 +1,20 @@
+1. Which error produces incorrect results but does not prevent the program from running?
+logic error
+2. The program development cycle is made up of ______ steps that are repeated until no errors can be found in the program.
+7
+3. What is the informal language that programmers use to create models of programs that have no syntax rules and are not meant to be compiled or executed?
+pseudocode
+4. The ____________ is a diagram that graphically depicts the steps that take place in a program.
+flowchart
+5. A _________ structure is a set of statements that execute in the order they appear.
+Sequence
+6. Which symbol is used for an assignment statement in a flowchart?
+oval
+7. Which mathematical operator is used to raise five to the second power?
+^
+8. The value of the expression 12 – 4 * 3 / 2 + 9 is _________.
+15
+8. Which of the following is not a variable data type?
+Real
+9. A ____________ is a name that represents a value that cannot be changed during the program’s execution?
+Named constant
