@@ -36,7 +36,7 @@ import random
 randomNumber= random.randint(0, 100)
 #Set variable to bool FALSE Initial state
 correctNumber=False
-dataInputGood=False
+#dataInputGood=False
 
 #Get user input
 def getInputData():
@@ -47,13 +47,11 @@ def inputCheck(incomingData):
     #Check if number by trying to convert to interger
     try:
         convertedToInt=int(incomingData)
-        dataInputGood=True
         return convertedToInt
+        
 #If the convert blows up:
-    except: 
-        print("Error- Please enter a Number or X to eXit")
-        dataInputGood=False
-        return 
+    except:
+        return False
 
 
 #Function to check on value/match
@@ -69,11 +67,11 @@ def calucateIfHighLowOrCorrect(inCalcData):
     #if entered number matches random number tell user they are right and set return value to TRUE
     else:
         print (f"Your Number {inCalcData} was right")
-        return True 
+        return True
 
 
 #Initial Information for user
-print ("Welcome to the number gestting program!\n")
+print ("Welcome to the number gestting program!")
 print("Type X to eXit") #Check value to exit- no infinante loop
 
 #keep checking if bool correctNumber is True then exit or if X is entered exit
@@ -83,8 +81,19 @@ while correctNumber != True:
     if inputData == "x" or inputData == "X":
         print("Exiting by request")
         break
+
+    #Get and Check Input
+    inputCheckReturn= inputCheck(inputData)
+    
+    #If Input is BAD/non X or x or int number print error
+    if inputCheckReturn == False:
+        print("Error- Please enter a Number or X to eXit")
+    #If input data number and successfuly coverted to INT- then evaluate.
+    else: 
+        correctNumber=calucateIfHighLowOrCorrect(inputCheckReturn)
+
     #if value returned as TRUE 
-    correctNumber=calucateIfHighLowOrCorrect(inputCheck(inputData))
+    
 #Say Thank you for playing
 print("Thank you for playing")
 quit()
