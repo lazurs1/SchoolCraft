@@ -1,5 +1,2 @@
 ﻿  RestaurantBill.cpp
-C:\Users\lazurx\Desktop\Code\SchoolCraft\CIS211\M2- Restruant Bill\RestaurantBill\RestaurantBill.cpp(16,9): warning C4101: 'sum': unreferenced local variable
-C:\Users\lazurx\Desktop\Code\SchoolCraft\CIS211\M2- Restruant Bill\RestaurantBill\RestaurantBill.cpp(18,9): warning C4101: 'SUM': unreferenced local variable
-C:\Users\lazurx\Desktop\Code\SchoolCraft\CIS211\M2- Restruant Bill\RestaurantBill\RestaurantBill.cpp(17,9): warning C4101: 'Sum': unreferenced local variable
   RestaurantBill.vcxproj -> C:\Users\lazurx\Desktop\Code\SchoolCraft\CIS211\M2- Restruant Bill\RestaurantBill\x64\Debug\RestaurantBill.exe
