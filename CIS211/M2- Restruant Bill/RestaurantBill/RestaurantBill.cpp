@@ -19,5 +19,6 @@ int main()
     cout << "Meal + Tax amount: $" << subTotal << "\n";
     cout << "Tip Amount: $" << tipAmount << "\n";
     cout << "Total Bill: $" << totalBill << "\n";
+    cout << 6 - 6 / 3 + 3 << "\n";
 }
 
