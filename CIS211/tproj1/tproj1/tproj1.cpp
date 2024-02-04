@@ -14,5 +14,5 @@ int main()
 	{
 		cout << "Number of Hours: " << seconds / 3600;
 	}
-	if (seconds < 3600)  cout << "Number of minutes: " << seconds / 60;
+	if (seconds < 3600 && seconds >=60)  cout << "Number of minutes: " << seconds / 60;
 }
