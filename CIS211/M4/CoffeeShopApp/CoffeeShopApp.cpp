@@ -24,26 +24,26 @@ int main()
     cout << fixed << setprecision(2);
     cout << "Please enter the number of pounds of coffee: ";
     cin >> inputLbs;
-
+        
         if (inputLbs < 5)
         {
             cout << "Your bill does not earn a discount. Your total is: $" << inputLbs * costPerLB;
         }
         else if (inputLbs >=5 && inputLbs <10)
             {
-            cout << "Your order has earned a " << discount_5to9LB << "/LB discount. Your total is : $" << inputLbs * cost_5to9LB;
+            cout << "Your order has earned a " << discount_5to9LB << "/LB discount. \nCost before discount: $" << inputLbs * costPerLB  << "\nYour savings is:      $" << ((inputLbs * costPerLB)- (inputLbs * cost_5to9LB)) << "\n---------------------------------------"<< "\nYour total is : $" << inputLbs * cost_5to9LB;
             }
         else if (inputLbs >= 10 && inputLbs < 20)
         {
-            cout << "Your order has earned a " << discount_10_19LB << "/LB discount. Your total is : $" << inputLbs * cost_10_19LB;
+            cout << "Your order has earned a " << discount_10_19LB << "/LB discount. \nCost before discount: $" << inputLbs * costPerLB << "\nYour savings is:      $" << ((inputLbs * costPerLB) - (inputLbs * cost_10_19LB)) << "\n---------------------------------------" << "\nYour total is :       $" << inputLbs * cost_10_19LB;
         }
         else if (inputLbs >= 20 && inputLbs < 29)
         {
-            cout << "Your order has earned a " << discount_20to29LB << "/LB discount. Your total is : $" << inputLbs * cost_20to29LB;
+            cout << "Your order has earned a " << discount_20to29LB << "/LB discount. \nCost before discount: $" << inputLbs * costPerLB  << "\nYour savings is:      $" << ((inputLbs * costPerLB) - (inputLbs * cost_20to29LB)) << "\n---------------------------------------" << "\nYour total is :       $" << inputLbs * cost_20to29LB;
         }
         else //Over 30 LB
         {
-            cout << "Your order has earned a " << discount_30orMoreLB << "/LB discount. Your total is : $" << inputLbs * cost_30orMoreLB;
+            cout << "Your order has earned a " << discount_30orMoreLB << "/LB discount. \nCost before discount: $" << inputLbs * costPerLB  << "\nYour savings is:      $" << ((inputLbs * costPerLB) - (inputLbs * cost_30orMoreLB)) << "\n---------------------------------------" << "\nYour total is :       $" << inputLbs * cost_30orMoreLB;
         }
 
 

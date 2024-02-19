@@ -33,7 +33,8 @@ import random
 
 #Set Variables
 #Get a random INT betwenn 0-100 (inclusive)
-randomNumber= random.randint(0, 100)
+
+)
 #Set variable to bool FALSE Initial state
 correctNumber=False
 #dataInputGood=False
