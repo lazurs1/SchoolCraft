@@ -3,6 +3,9 @@
 
 #include <iostream>
 #include <string>
+#include <iomanip>
+#include <ios>
+#include <iostream>
 //
 //int main()
 //{
@@ -22,6 +25,11 @@
 
 
 using namespace std;
+string functiontest(string aaa)
+{
+    cout << "function111" << aaa;
+    return "test++_+" + aaa;
+    }
     int main()
 {       
         //2-3
@@ -181,8 +189,74 @@ using namespace std;
 
 
 
+    
 
 
+    //return 0;
 
-    return 0;
+    int i = 0;
+    int i2 = 0;
+    int i3 = 0;
+    //cout << "test\n";
+
+    //for (i = 0; i < 5;) {
+    //    cout << "Hello"<< i << "\n";
+    //    i++;
+    //}
+    //
+
+    bool condition1 = true;
+    cout << "-----------------------------------------------------------------";
+    for (; condition1;) {
+        
+        cout << "Hello" << i+1 << "\n";
+        i++;
+        if (!(i < 5))
+            condition1 = false;
+    }
+
+    cout << "-----------------------------------------------------------------";
+
+    while (i2 < 5)
+        {
+            cout << "Hello2  " << i2 + 1 << "\n";
+            i2++;
+
+        }
+    cout << "-----------------------------------------------------------------";
+    do
+    {
+        cout << "Hello3  " << i3 + 1 << "\n";
+        i3++;
+
+    } while (i3 < 9);
+
+    cout << "-----------------------------------------------------------------";
+    cout << "testing1   " << functiontest("bbbbn");
+
+
+    cout << "-----------------------------------------------------------------";
+    int num, limit;
+    cout << "Table of squares\n";
+    cout << "How high to go? ";
+    cin >> limit;
+    cout << "\n\nnumber square\n";
+    num = 1;
+    while (num <= limit)
+    {
+        cout << setw(5) << num << setw(6)
+            << num * num << endl;
+        num++;
+    }
+    int sum = 0; // sum is the
+
+    cout << "-----------------------------------------------------------------";
+    while (num <= 10)     // accumulator
+    {
+        sum += num;
+        num++;
+    }
+    cout << "Sum of numbers 1 – 10 is "
+        << sum << endl;
+
 }
