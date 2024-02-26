@@ -1,0 +1,114 @@
+<mxfile host="Electron" modified="2024-02-05T00:13:24.396Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.18 Chrome/120.0.6099.199 Electron/28.1.2 Safari/537.36" etag="f4LDSkqek9qsjixzA0ZW" version="22.1.18" type="device">
+  <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
+    <mxGraphModel dx="2074" dy="1205" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-3" value="Start" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="169" y="70" width="140" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="SuNOhPGvzMYFYTVkQDeq-0" value="Input 3 numbers" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="139" y="130" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qHhuy63d4S-9RCZUKD1h-1" value="Internal Module Call" style="swimlane;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="160.87" y="400" width="177.5" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="qHhuy63d4S-9RCZUKD1h-2" value="Call function to check function checkinput(num1,num2,num3)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="qHhuy63d4S-9RCZUKD1h-1" vertex="1">
+          <mxGeometry x="30" y="30" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="fb3xNtcODuzkv7CMy7z3-26" value="Start&lt;br&gt;Input 3 numbers&lt;br&gt;Try to Convert numbers to intergers&lt;br&gt;go to function to check input to see if input1 + input 2 = sum of input1 + input 2&lt;br&gt;If sum of input true- then let user know&lt;br&gt;if sum of input false - let user know&lt;br&gt;return from function&lt;br&gt;exit python&lt;br&gt;stop&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=10;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="350" y="10" width="450" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="fb3xNtcODuzkv7CMy7z3-29" value="CIS 129&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;Thomas Burns&lt;br&gt;M4 Sum two numers and see if they match a thrid" style="rounded=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="11.37" y="10" width="149.5" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="AkU996nDEYvkqo81ou0r-0" value="Try to convert &lt;br&gt;numbers to INT" style="rhombus;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="159" y="230" width="160" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="AkU996nDEYvkqo81ou0r-2" value="If error print &lt;br&gt;&quot;Please enter a number next time&quot;" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="420" y="255" width="181.25" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="AkU996nDEYvkqo81ou0r-4" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="SuNOhPGvzMYFYTVkQDeq-0" target="AkU996nDEYvkqo81ou0r-0" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="60" y="390" as="sourcePoint" />
+            <mxPoint x="110" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AkU996nDEYvkqo81ou0r-5" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="WIyWlLk6GJQsqaUBKTNV-3" target="SuNOhPGvzMYFYTVkQDeq-0" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="249" y="290" as="sourcePoint" />
+            <mxPoint x="249" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AkU996nDEYvkqo81ou0r-6" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="AkU996nDEYvkqo81ou0r-0" target="AkU996nDEYvkqo81ou0r-2" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="330" y="270" as="sourcePoint" />
+            <mxPoint x="380" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AkU996nDEYvkqo81ou0r-7" value="If Error" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="AkU996nDEYvkqo81ou0r-6" vertex="1" connectable="0">
+          <mxGeometry x="-0.5023" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AkU996nDEYvkqo81ou0r-8" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.46;entryY=-0.012;entryDx=0;entryDy=0;entryPerimeter=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="AkU996nDEYvkqo81ou0r-0" target="qHhuy63d4S-9RCZUKD1h-1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="60" y="450" as="sourcePoint" />
+            <mxPoint x="110" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AkU996nDEYvkqo81ou0r-9" value="Check if &lt;br&gt;Num1 + Num2 = Num3" style="rhombus;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="160.87" y="520" width="180" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="AkU996nDEYvkqo81ou0r-11" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="qHhuy63d4S-9RCZUKD1h-1" target="AkU996nDEYvkqo81ou0r-9" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="61.87" y="740" as="sourcePoint" />
+            <mxPoint x="111.87" y="690" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AkU996nDEYvkqo81ou0r-12" value="Print &quot;Your numbers (num1) + num2) sums up to (num3)" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="471.87" y="565" width="181.25" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="AkU996nDEYvkqo81ou0r-13" value="Print &quot;Your numbers (num1) + num2) do NOT sum up to (num3)" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="159" y="750" width="181.25" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="AkU996nDEYvkqo81ou0r-14" value="num1 + num2 = num3" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="AkU996nDEYvkqo81ou0r-9" target="AkU996nDEYvkqo81ou0r-12" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="451.87" y="750" as="sourcePoint" />
+            <mxPoint x="501.87" y="700" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AkU996nDEYvkqo81ou0r-15" value="num1 + num2 != num3" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="AkU996nDEYvkqo81ou0r-9" target="AkU996nDEYvkqo81ou0r-13" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="350.87" y="615" as="sourcePoint" />
+            <mxPoint x="481.87" y="615" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AkU996nDEYvkqo81ou0r-16" value="Exit" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="653.12" y="270" width="140" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="AkU996nDEYvkqo81ou0r-17" value="" style="endArrow=classic;html=1;rounded=0;exitX=1.03;exitY=0.402;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="AkU996nDEYvkqo81ou0r-2" target="AkU996nDEYvkqo81ou0r-16" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="490" y="210" as="sourcePoint" />
+            <mxPoint x="540" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AkU996nDEYvkqo81ou0r-19" value="Exit" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="492.49" y="760" width="140" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="AkU996nDEYvkqo81ou0r-20" value="" style="endArrow=classic;html=1;rounded=0;exitX=1.005;exitY=0.402;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="AkU996nDEYvkqo81ou0r-13" target="AkU996nDEYvkqo81ou0r-19" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="370" y="750" as="sourcePoint" />
+            <mxPoint x="420" y="700" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AkU996nDEYvkqo81ou0r-21" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.511;exitY=0.84;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="AkU996nDEYvkqo81ou0r-12" target="AkU996nDEYvkqo81ou0r-19" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="600" y="710" as="sourcePoint" />
+            <mxPoint x="650" y="660" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
