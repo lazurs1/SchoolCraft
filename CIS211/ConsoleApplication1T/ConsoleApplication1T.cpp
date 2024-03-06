@@ -6,6 +6,7 @@
 #include <iomanip>
 #include <ios>
 #include <iostream>
+#include <fstream>
 //
 //int main()
 //{
@@ -25,13 +26,31 @@
 
 
 using namespace std;
-string functiontest(string aaa)
-{
-    cout << "function111" << aaa;
-    return "test++_+" + aaa;
-    }
+    //string functiontest(string aaa)
+    //    {
+    //    cout << "function111" << aaa;
+    //    return "test++_+" + aaa;
+    //    }
+    //enum Roster {Tom=0, Sharon, Bill, Teresa, John};
     int main()
-{       
+    {   
+        ////Switch
+        //int who;
+        //cin >> who;
+        //switch (who)
+        //{
+        //case Tom: cout << "Tom\n";
+        //    break;
+        //case Sharon: cout << "Sharon\n";
+        //    break;
+        //case Bill: cout << "Bill\n";
+        //    break;
+        //case Teresa: cout << "Teresa\n";
+        //    break;
+        //case John:  cout << "John\n";
+        //    break;
+
+        //}
         //2-3
         //cout << "Programin is fun";
         
@@ -259,28 +278,47 @@ string functiontest(string aaa)
     //cout << "Sum of numbers 1 – 10 is "
     //    << sum << endl;
 
-    cout << "test" << fixed << setprecision(2) << 3.1415927;
-    string test = "abc";
-    cout <<  "\nString Length: " << test.length() << "\n";
+    //cout << "test" << fixed << setprecision(2) << 3.1415927;
+    //string test = "abc";
+    //cout <<  "\nString Length: " << test.length() << "\n";
 
 
-    const int SIZE = 12;
-    char name1[SIZE], name2[SIZE];
+    //const int SIZE = 12;
+    //char name1[SIZE], name2[SIZE];
 
-    strcpy_s(name1, "Sebastian");
-    cout << "name1 now hold s the string " << name1 << endl;
+    //strcpy_s(name1, "Sebastian");
+    //cout << "name1 now hold s the string " << name1 << endl;
 
-    strcpy_s(name2, name1);
-    cout << "name2 now also hold the string " << name2 << endl;
-
-
-    cout << "Randmom Number\n" << rand() % 7 + 1;
+    //strcpy_s(name2, name1);
+    //cout << "name2 now also hold the string " << name2 << endl;
 
 
-    string test1 = "Thomas";
-    string test2 = "thomas1";
-    if (test1 > test2)
-        cout << "true\n";
-    else
-        cout << "False\n";
+    //cout << "Randmom Number\n" << rand() % 7 + 1;
+
+
+    //string test1 = "Thomas";
+    //string test2 = "thomas1";
+    //if (test1 > test2)
+    //    cout << "true\n";
+    //else
+    //    cout << "False\n";
+
+
+    //file ops
+    ofstream outputFile;
+    //open file
+    outputFile.open("demofile.txt");
+    cout << "Now writing data to the file.\n";
+    outputFile << "Bach\n";
+    outputFile << "bet\n";
+    outputFile << "Motz\n";
+    outputFile << "sch\n";
+    outputFile << "Blnk182\n";
+    outputFile << "Othere\n";
+
+    //Close file
+    outputFile.close();
+    cout << "Done. \n";
+
+
 }
