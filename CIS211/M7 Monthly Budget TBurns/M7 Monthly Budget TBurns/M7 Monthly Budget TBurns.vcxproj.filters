@@ -18,5 +18,13 @@
     <ClCompile Include="M7 Monthly Budget TBurns.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="dothings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="dothings.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

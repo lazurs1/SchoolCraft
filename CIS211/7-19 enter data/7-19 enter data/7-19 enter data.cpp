@@ -50,6 +50,7 @@ void displayPrompts(HANDLE screen)
 {
 	SetConsoleTextAttribute(screen, 10);
 	placeCursor(screen, 3, 25);
+	cout << "******* Data Entry Form *******\n ";
 	cout << "******* Data Entry Form *******";
 	placeCursor(screen, 5, 25);
 	SetConsoleTextAttribute(screen, 11);

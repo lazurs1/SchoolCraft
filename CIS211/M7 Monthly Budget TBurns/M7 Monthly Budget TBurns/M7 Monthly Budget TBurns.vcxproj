@@ -127,7 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="dothings.cpp" />
     <ClCompile Include="M7 Monthly Budget TBurns.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="dothings.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
