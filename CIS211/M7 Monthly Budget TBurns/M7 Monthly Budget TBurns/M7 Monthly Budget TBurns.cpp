@@ -1,4 +1,4 @@
-/*
+﻿/*
 * 
    _____ _____  _____   ___  __ __ 
   / ____|_   _|/ ____| |__ \/_ /_ |
@@ -6,6 +6,12 @@
  | |      | |  \___ \    / / | || |
  | |____ _| |_ ____) |  / /_ | || |
   \_____|_____|_____/  |____||_||_|
+
+ ___   ___   ___         ___   _     _
+|       |   |               |   |     |
+|       +    -+-         -+-    +     +
+|       |       |       |       |     |
+ ---   ---   ---         ---   ---   ---
                                    
 TBurns
 Module 7
@@ -33,7 +39,7 @@ Using Program 7-19 as a model, the program should create a screen form that disp
 each category name and its budgeted amount, then positions the cursor next to it for 
 the user to enter the amount actually spent in that category. 
 Once the user data has all been entered, the program should compute and display the 
-amount over or under budget the student�s expenditures were in each category, 
+amount over or under budget the student’s expenditures were in each category, 
 as well as the amount over or under budget for the entire month.
 
 */
@@ -61,7 +67,7 @@ struct MonthlyBudget {
 };
 
 void placeCursor(HANDLE, int, int);   // Function prototypes
-void displayPrompts(HANDLE);
+void displayInitialData(HANDLE);
 void displayPrevInfo(HANDLE screen, MonthlyBudget test);
 void userInput(HANDLE screen, MonthlyBudget& mBudUserNums, MonthlyBudget lastMonthData);
 void displayLogo(HANDLE screen);
@@ -92,19 +98,14 @@ int main()
 
 
 	mBudwithNums.Total = mBudwithNums.Miscellaneous + mBudwithNums.Clothing + mBudwithNums.Entertainment + mBudwithNums.Insurance + mBudwithNums.Medical + mBudwithNums.Food + mBudwithNums.Transportation + mBudwithNums.Householdexpenses + mBudwithNums.UtilitiesInternetPhone + mBudwithNums.Housing;
-	placeCursor(screen, 0, 0);
-	cout << mBudwithNums.Total;
 
-	displayPrompts(screen);
+	displayInitialData(screen);
 	displayPrevInfo(screen, mBudwithNums);
 	userInput(screen, mBudUserNums, mBudwithNums);
 
 
 	mBudwithNums.Total = mBudwithNums.Miscellaneous + mBudwithNums.Clothing + mBudwithNums.Entertainment + mBudwithNums.Insurance + mBudwithNums.Medical + mBudwithNums.Food + mBudwithNums.Transportation + mBudwithNums.Householdexpenses + mBudwithNums.UtilitiesInternetPhone + mBudwithNums.Housing;
-	placeCursor(screen, 0, 0);
-	cout << mBudwithNums.Total;
-	placeCursor(screen, 0, 20);
-	cout << mBudUserNums.Total;
+
 
 	if (mBudwithNums.Total > mBudUserNums.Total)
 	{
@@ -119,7 +120,7 @@ int main()
 		cout << "$" << (mBudwithNums.Total - mBudUserNums.Total) * -1 << " Is the amount you are over!";
 	}
 
-
+	SetConsoleTextAttribute(screen, 8);
 	placeCursor(screen, 24, 7);
 }
 
@@ -136,19 +137,23 @@ void placeCursor(HANDLE screen, int row, int col)
 }
 
 /******************************************************
- *                   displayPrompts                   *
+ *                   Display Start Data               *
  ******************************************************/
-void displayPrompts(HANDLE screen)
+void displayInitialData(HANDLE screen)
 {
 	SetConsoleTextAttribute(screen, 10);
 	placeCursor(screen, 1, 50);
 	cout << "Monthly Budget";
 	placeCursor(screen, 2, 0);
+	SetConsoleTextAttribute(screen, 1);
 	cout << "------------------------------------------------------------------------------------------------------------------------";
 	placeCursor(screen, 3, 0);
+	SetConsoleTextAttribute(screen, 3);
 	cout << "    Item                            Last Cost            This month Cost          Difference";
+	SetConsoleTextAttribute(screen, 1);
 	placeCursor(screen, 4, 0);
 	cout << "------------------------------------------------------------------------------------------------------------------------";
+	SetConsoleTextAttribute(screen, 11);
 	placeCursor(screen, 5, 3);
 	cout << "Housing:";	
 	placeCursor(screen, 6, 3);
@@ -170,12 +175,14 @@ void displayPrompts(HANDLE screen)
 	placeCursor(screen, 14, 3);
 	cout << "Miscellaneous:";
 	placeCursor(screen, 15, 0);
+	SetConsoleTextAttribute(screen, 6);
 	cout << "------------------------------------------------------------------------------------------------------------------------";
 	placeCursor(screen, 16, 3);
+	SetConsoleTextAttribute(screen, 11);
 	cout << "Total:";
 
 
-
+	SetConsoleTextAttribute(screen, 5);
 	placeCursor(screen, 5, 57);
 	cout << "$";
 	placeCursor(screen, 6, 57);
@@ -232,56 +239,80 @@ void displayPrevInfo(HANDLE screen, MonthlyBudget lastMonthData)
 
 void userInput(HANDLE screen, MonthlyBudget& mBudUserNums, MonthlyBudget lastMonthData)
 {
+	int color = 11;
+	int Color2 = 5;
 	placeCursor(screen, 5, 58);
+	SetConsoleTextAttribute(screen, Color2);
 	cin >> mBudUserNums.Housing;
 	placeCursor(screen, 5, 82);
+	SetConsoleTextAttribute(screen, color);
 	cout << "$" << lastMonthData.Housing - mBudUserNums.Housing;
 
+	SetConsoleTextAttribute(screen, Color2);
 	placeCursor(screen, 6, 58);
 	cin >> mBudUserNums.UtilitiesInternetPhone;
+	
+	SetConsoleTextAttribute(screen, color);
 	placeCursor(screen, 6, 82);
 	cout << "$" << lastMonthData.UtilitiesInternetPhone - mBudUserNums.UtilitiesInternetPhone;
 
+	SetConsoleTextAttribute(screen, Color2);
 	placeCursor(screen, 7, 58);
 	cin >> mBudUserNums.Householdexpenses;
+	SetConsoleTextAttribute(screen, color);
 	placeCursor(screen, 7, 82);
 	cout << "$" << lastMonthData.Householdexpenses - mBudUserNums.Householdexpenses;
 
+	SetConsoleTextAttribute(screen, Color2);
 	placeCursor(screen, 8, 58);
 	cin >> mBudUserNums.Transportation;
+	SetConsoleTextAttribute(screen, color);
 	placeCursor(screen, 8, 82);
 	cout << "$" << lastMonthData.Transportation - mBudUserNums.Transportation;
 
+	SetConsoleTextAttribute(screen, Color2);
 	placeCursor(screen, 9, 58);
 	cin >> mBudUserNums.Food;
+	SetConsoleTextAttribute(screen, color);
 	placeCursor(screen, 9, 82);
 	cout << "$" << lastMonthData.Food - mBudUserNums.Food;
 
+	SetConsoleTextAttribute(screen, Color2);
 	placeCursor(screen, 10, 58);
 	cin >> mBudUserNums.Medical;
+	SetConsoleTextAttribute(screen, color);
 	placeCursor(screen, 10, 82);
 	cout << "$" << lastMonthData.Medical - mBudUserNums.Medical;
 
+	SetConsoleTextAttribute(screen, Color2);
 	placeCursor(screen, 11, 58);
 	cin >> mBudUserNums.Insurance;
+	SetConsoleTextAttribute(screen, color);
 	placeCursor(screen, 11, 82);
 	cout << "$" << lastMonthData.Insurance - mBudUserNums.Insurance;
 
+	SetConsoleTextAttribute(screen, Color2);
 	placeCursor(screen, 12, 58);
 	cin >> mBudUserNums.Entertainment;
+	SetConsoleTextAttribute(screen, color);
 	placeCursor(screen, 12, 82);
 	cout << "$" << lastMonthData.Entertainment - mBudUserNums.Entertainment;
 
+	SetConsoleTextAttribute(screen, Color2);
 	placeCursor(screen, 13, 58);
 	cin >> mBudUserNums.Clothing;
+	SetConsoleTextAttribute(screen, color);
 	placeCursor(screen, 13, 82);
 	cout << "$" << lastMonthData.Clothing - mBudUserNums.Clothing;
 
+	SetConsoleTextAttribute(screen, Color2);
 	placeCursor(screen, 14, 58);
 	cin >> mBudUserNums.Miscellaneous;
+	SetConsoleTextAttribute(screen, color);
 	placeCursor(screen, 14, 82);
 	cout << "$" << lastMonthData.Miscellaneous - mBudUserNums.Miscellaneous;
 
+	SetConsoleTextAttribute(screen, Color2);
 	float total2 = mBudUserNums.Miscellaneous + mBudUserNums.Clothing + mBudUserNums.Entertainment + mBudUserNums.Insurance + mBudUserNums.Medical + mBudUserNums.Food + mBudUserNums.Transportation + mBudUserNums.Householdexpenses + mBudUserNums.UtilitiesInternetPhone + mBudUserNums.Housing;
 	placeCursor(screen, 16, 57);
 	cout << "$" << total2;
@@ -290,14 +321,14 @@ void userInput(HANDLE screen, MonthlyBudget& mBudUserNums, MonthlyBudget lastMon
 
 void displayLogo(HANDLE screen)
 {
-	placeCursor(screen, 20, 0);
 
-
-	cout << "    ______  _____   ______      _____    __      __\n";
-	cout << "  .' ___  ||_   _|.' ____ \    / ___ `. /  |    /  |\n";
-	cout << " / .'   \_|  | |  | (___ \_|  |_/___) | `| |   ` | |\n";
-	cout << "| |          | |   _.____`.     .'____.'  | |     | |\n";
-	cout << " \ `.___.'\ _| |_ | \____) |  / /_____ _ | |_   _| |_ \n";
-	cout << "  `.____ .'|_____| \______.'  |_______||_____ ||_____| \n";
-
+	SetConsoleTextAttribute(screen, 3);
+	placeCursor(screen, 20, 5);
+	cout << "____ ____ ____ __________ ____ ____ ____";
+	placeCursor(screen, 21, 5);
+	cout << "||C |||I |||S ||| tburns |||2 |||1 |||1 ||";
+	placeCursor(screen, 22, 5);
+	cout << "||__|||__|||__|||________|||__|||__|||__||";
+	placeCursor(screen, 23, 5);
+	cout << "|/__\\|/__\\|/__\\|/________\\|/__\\|/__\\|/__\\|";
 }
