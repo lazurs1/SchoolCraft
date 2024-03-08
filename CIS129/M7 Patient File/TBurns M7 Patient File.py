@@ -17,6 +17,9 @@ Complete the flowchart and pseudocode using draw.io. Include your pseudocode by 
 Complete the Python code using IDLE. Save your .py file and attach it in the assignment submission area by the listed due date. 
 This assignment is worth 20 points and will be evaluated using the CIS 129 Assignment Rubric.
 '''
+
+
+'''
 def checkinput(i1,i2,i3):
     if (i1 + i2 == i3):
         print(f"your numbers {i1} + {i2} sum up to {i3}")
@@ -40,3 +43,32 @@ try: #error handle if non number entered or other error
 except: #error- not a number entered
     print("Please enter a number next time")
 
+
+
+# Example line
+line = "John Doe, 123 Elm Street, 1990"
+
+# Split the line by comma and strip extra whitespace
+parts = [part.strip() for part in line.split(',')]
+
+# Convert the split parts into a tuple
+record = (parts[0], parts[1], int(parts[2]))  # Convert Birth Year to int for correctness
+
+print(record)
+
+'''
+
+ 
+cstr = "I love geeksforgeeks"
+ 
+# Printing the center aligned string with fillchr
+print("Center aligned string with fillchr: ")
+print(cstr.center(40, '#'))
+ 
+# Printing the left aligned string with "-" padding
+print("The left aligned string is : ")
+print(cstr.ljust(40, '-'))
+ 
+# Printing the right aligned string with "-" padding
+print("The right aligned string is : ")
+print(cstr.rjust(40, ' '))
