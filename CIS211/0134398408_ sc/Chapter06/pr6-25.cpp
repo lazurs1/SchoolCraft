@@ -1,4 +1,4 @@
-// This program illustrates two appropriate uses 
+0// This program illustrates two appropriate uses 
 // of passing arguments by reference. 
 #include <iostream>
 using namespace std;
