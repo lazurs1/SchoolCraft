@@ -34,6 +34,17 @@ using namespace std;
     //enum Roster {Tom=0, Sharon, Bill, Teresa, John};
     int main()
     {   
+
+        const int SIZE = 5;
+        int numbers[SIZE];
+        for (int idx = 0; idx < SIZE; idx++)
+            numbers[idx] = idx;
+
+        cout << "\nHere are the array elements: \n\n";
+        for (int idx = 0; idx < SIZE; idx++)
+            cout << numbers[idx] << endl;
+
+        cout << "------------------------------------------------------";
         ////Switch
         //int who;
         //cin >> who;

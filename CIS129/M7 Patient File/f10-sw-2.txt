@@ -1,0 +1,1463 @@
+login as: admin
+Pre-authentication banner message from server:
+| Debian GNU/Linux 9
+|
+| Dell EMC Networking Operating System (OS10)
+End of banner message from server
+admin@10.10.10.22's password:
+Linux OS10 4.9.189 #1 SMP Debian 4.9.189-3+deb9u1 x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+
+
+-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+-*         Dell EMC  Network Operating System (OS10)           *-
+-*                                                             *-
+-* Copyright (c) 1999-2019 by Dell Inc. All Rights Reserved.   *-
+-*                                                             *-
+-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+This product is protected by U.S. and international copyright and
+intellectual property laws. Dell EMC and the Dell EMC logo are
+trademarks of Dell Inc. in the United States and/or other
+jurisdictions. All other marks and names mentioned herein may be
+trademarks of their respective companies.
+
+ %Warning : Default password for admin account should be changed to secure the system
+OS10# show running-configuration
+! Version 10.5.0.4
+! Last configuration change at Mar  07 04:15:43 2023
+!
+ip vrf default
+!
+interface breakout 1/1/25 map 100g-1x
+interface breakout 1/1/26 map 100g-1x
+iscsi enable
+iscsi target port 860
+iscsi target port 3260
+system-user linuxadmin password $6$5DdOHYg5$JCE1vMSmkQOrbh31U74PIPv7lyOgRmba1IxhkYibppMXs1KM4Y.gbTPcxyMP/PHUkMc5r
+username admin password $6$q9QBeYjZ$jfxzVqGhkxX3smxJSH9DDz7/3OJc6m5wjF8nnLD7/VKx8SloIhp4NoGZs0I/UNwh8WVuxwfd9q4pW
+aaa authentication login default local
+aaa authentication login console local
+!
+class-map type application class-iscsi
+!
+policy-map type application policy-iscsi
+!
+interface vlan1
+ no shutdown
+!
+interface port-channel128
+ no shutdown
+ switchport access vlan 1
+!
+interface mgmt1/1/1
+ no shutdown
+ no ip address dhcp
+ ip address 10.10.10.22/24
+ ipv6 address autoconfig
+!
+interface ethernet1/1/1
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/2
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/3
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/4
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/5
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/6
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/7
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/8
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/9
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/10
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/11
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/12
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/13
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/14
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/15
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/16
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/17
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/18
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/19
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/20
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/21
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/22
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/23
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/24
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/25
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/26
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/27
+ no shutdown
+ channel-group 128 mode active
+ no switchport
+ flowcontrol receive on
+!
+interface ethernet1/1/28
+ no shutdown
+ channel-group 128 mode active
+ no switchport
+ flowcontrol receive on
+!
+interface ethernet1/1/29
+ no shutdown
+ channel-group 128 mode active
+ no switchport
+ flowcontrol receive on
+!
+interface ethernet1/1/30
+ no shutdown
+ channel-group 128 mode active
+ no switchport
+ flowcontrol receive on
+!
+management route 0.0.0.0/0 10.10.10.1
+!
+snmp-server contact "Contact Support"
+!
+telemetry
+ OS10#
+OS10# configure terminal
+OS10(config)# user
+username userrole
+OS10(config)# user
+username userrole
+OS10(config)# username tburns password Laurie02! role sysadmin
+
+ %Error: Password fail:  it is based on a dictionary word
+OS10(config)# username tburns password Necromancer01! role sysadmin
+
+ %Error: Password fail:  it is based on a dictionary word
+OS10(config)# username tburns password XCVbgh78&* role sysadmin
+OS10(config)# sho
+
+OS10(config)#
+OS10(config)# exit
+OS10# show
+  acl-table-usage          Show ACL table utilization
+  alarms                   Display all current alarm situation in the system
+  alias                    Show list of aliases
+  bfd                      Show bfd session commands
+  boot                     Show boot information
+  candidate-configuration  Current candidate configuration
+  class-map                Show QoS class-map configuration
+  clock                    Show the system date and time
+  command-history          Show command history of the current user
+  control-plane            Display control-plane related informations
+  copy-file                Show file copy operation information
+  crypto                   Display cryptographic information
+  debug                    Show the debug options enabled
+  dhcp-server              Show DHCP server information
+  diag                     Show diagnostic information for port adapters/modules
+  diff                     Display differences between two configuration set
+  discovered-expanders     discovered expanders info
+  dot1x                    Show dot1x information
+  enhanced-hashing         Show enhanced hashing information
+  environment              Show the environmental information of the system
+  errdisable               Show errdisable information
+  eula-consent             Shows eula-consent for various modules
+  event                    Show event commands
+  evpn                     Show Ethernet Virtual Private Network
+  exec-timeout             Show the timeout value of CLI session (in seconds)
+  fcoe                     show fcoe
+  fefd                     Show FEFD status
+  file                     Display file content in specified location
+  fips                     Show fips mode status
+  gnmi-security-profile    Show gNMI Security Profiles
+  hardware                 Show hardware information
+  hash-algorithm           Show hash algorithm information
+  hosts                    show information about DNS
+  image                    Show image information
+  interface                Interface status and configuration
+  inventory                Show the system inventory information
+  ip                       show IP commands
+  ipv6                     Display IPv6 neighbor information
+  iscsi                    Show iscsi
+  lacp                     Show LACP information
+  license                  Show license and digital fulfillment related information
+  link-bundle-utilization  Display the link-bundle utilization for the interfaces in the bundle
+  lldp                     Show lldp
+  load-balance             Show global traffic load-balance configuration
+  logging                  Show logging messages
+  login                    Show login parameters
+  mac                      MAC forwarding table
+  monitor                  Show port monitoring sessions
+  network-policy           Show network policy
+  ntp                      NTP associations
+  nve                      Display NVE related info
+  ovsdb-tables             Display OVSDB tables related info
+  parser-tree              Show parser tree
+  policy-map               Show policy-map information
+  port-channel             LAG status and configuration
+  privilege                Show current privilege level
+  processes                Show processes statistics
+  qos                      Show ingress or egress QoS configuration
+  qos-rate-adjust          Statistics for rate adjust limit configuration on Policer and Shaper
+  queuing                  Show egress QoS counters
+  route-map                Show route map information
+  running-configuration    Current operating configuration
+  sessions                 Show active management sessions
+  sfd                      Show information about the smart fabric
+  sflow                    Show sflow
+  smartfabric              Show information about the smart fabric
+  snmp                     Display all current snmp configuration
+  spanning-tree            Show spanning tree information
+  startup-configuration    Contents of startup configuration
+  storm-control            Show storm control configuration
+  support-assist           Show information about the support-assist module
+  switch-operating-mode    Switch operating mode
+  system                   Show system status information
+  tech-support             Collection of show commands
+  telemetry                Show telemetry status information
+  terminal                 Show terminal configurations for this session
+  trace                    Show trace messages
+  track                    Show object tracking information
+  uplink-state-group       Display the uplink state group configurations
+  uptime                   Show the system uptime
+  users                    Show the current list of users logged into the system , and show the session id
+  version                  Show the software version on the system
+  virtual-network          Virtual-network info
+  vlan                     Vlan status and configuration
+  vlt                      Show VLT domain info
+  vrrp                     VRRP group status
+  ztd-status               Show ztd status
+
+OS10# show system
+
+Node Id              : 1
+MAC                  : f0:d4:e2:7b:c4:04
+Number of MACs       : 128
+Up Time              : 54 weeks 19:10:36
+
+-- Unit 1 --
+Status                     : up
+System Identifier          : 1
+Down Reason                : user-triggered
+Digital Optical Monitoring : disable
+System Location LED        : off
+Required Type              : S4128
+Current Type               : S4128
+Hardware Revision          : A06
+Software Version           : 10.5.0.4
+Physical Ports             : 28x10GbE, 2x100GbE
+BIOS                          : 3.33.0.1-7
+System CPLD                   : 1.1
+Master CPLD                   : 1.0
+Slave CPLD                    : 0.7
+
+-- Power Supplies --
+PSU-ID  Status      Type    AirFlow   Fan  Speed(rpm)  Status
+----------------------------------------------------------------
+1       up          AC      REVERSE   1    11696       up
+
+2       up          AC      REVERSE   1    11632       up
+
+
+-- Fan Status --
+FanTray  Status      AirFlow   Fan  Speed(rpm)  Status
+----------------------------------------------------------------
+1        up          REVERSE   1    10983       up
+
+2        up          REVERSE   1    11045       up
+
+3        up          REVERSE   1    11014       up
+
+4        up          REVERSE   1    10953       up
+
+
+OS10# show vlan
+Codes: * - Default VLAN, M - Management VLAN, R - Remote Port Mirroring VLANs,
+       @ – Attached to Virtual Network, P - Primary, C - Community, I - Isolated
+Q: A - Access (Untagged), T - Tagged
+    NUM    Status    Description                     Q Ports
+*   1      Active                                    A Eth1/1/1-1/1/26
+                                                     A Po128
+OS10# show
+  acl-table-usage          Show ACL table utilization
+  alarms                   Display all current alarm situation in the system
+  alias                    Show list of aliases
+  bfd                      Show bfd session commands
+  boot                     Show boot information
+  candidate-configuration  Current candidate configuration
+  class-map                Show QoS class-map configuration
+  clock                    Show the system date and time
+  command-history          Show command history of the current user
+  control-plane            Display control-plane related informations
+  copy-file                Show file copy operation information
+  crypto                   Display cryptographic information
+  debug                    Show the debug options enabled
+  dhcp-server              Show DHCP server information
+  diag                     Show diagnostic information for port adapters/modules
+  diff                     Display differences between two configuration set
+  discovered-expanders     discovered expanders info
+  dot1x                    Show dot1x information
+  enhanced-hashing         Show enhanced hashing information
+  environment              Show the environmental information of the system
+  errdisable               Show errdisable information
+  eula-consent             Shows eula-consent for various modules
+  event                    Show event commands
+  evpn                     Show Ethernet Virtual Private Network
+  exec-timeout             Show the timeout value of CLI session (in seconds)
+  fcoe                     show fcoe
+  fefd                     Show FEFD status
+  file                     Display file content in specified location
+  fips                     Show fips mode status
+  gnmi-security-profile    Show gNMI Security Profiles
+  hardware                 Show hardware information
+  hash-algorithm           Show hash algorithm information
+  hosts                    show information about DNS
+  image                    Show image information
+  interface                Interface status and configuration
+  inventory                Show the system inventory information
+  ip                       show IP commands
+  ipv6                     Display IPv6 neighbor information
+  iscsi                    Show iscsi
+  lacp                     Show LACP information
+  license                  Show license and digital fulfillment related information
+  link-bundle-utilization  Display the link-bundle utilization for the interfaces in the bundle
+  lldp                     Show lldp
+  load-balance             Show global traffic load-balance configuration
+  logging                  Show logging messages
+  login                    Show login parameters
+  mac                      MAC forwarding table
+  monitor                  Show port monitoring sessions
+  network-policy           Show network policy
+  ntp                      NTP associations
+  nve                      Display NVE related info
+  ovsdb-tables             Display OVSDB tables related info
+  parser-tree              Show parser tree
+  policy-map               Show policy-map information
+  port-channel             LAG status and configuration
+  privilege                Show current privilege level
+  processes                Show processes statistics
+  qos                      Show ingress or egress QoS configuration
+  qos-rate-adjust          Statistics for rate adjust limit configuration on Policer and Shaper
+  queuing                  Show egress QoS counters
+  route-map                Show route map information
+  running-configuration    Current operating configuration
+  sessions                 Show active management sessions
+  sfd                      Show information about the smart fabric
+  sflow                    Show sflow
+  smartfabric              Show information about the smart fabric
+  snmp                     Display all current snmp configuration
+  spanning-tree            Show spanning tree information
+  startup-configuration    Contents of startup configuration
+  storm-control            Show storm control configuration
+  support-assist           Show information about the support-assist module
+  switch-operating-mode    Switch operating mode
+  system                   Show system status information
+  tech-support             Collection of show commands
+  telemetry                Show telemetry status information
+  terminal                 Show terminal configurations for this session
+  trace                    Show trace messages
+  track                    Show object tracking information
+  uplink-state-group       Display the uplink state group configurations
+  uptime                   Show the system uptime
+  users                    Show the current list of users logged into the system , and show the session id
+  version                  Show the software version on the system
+  virtual-network          Virtual-network info
+  vlan                     Vlan status and configuration
+  vlt                      Show VLT domain info
+  vrrp                     VRRP group status
+  ztd-status               Show ztd status
+
+OS10# show license
+% Error: The command is not completed.
+OS10# show
+acl-table-usage         alarms                  alias                   bfd                     boot
+command-history         control-plane           copy-file               crypto                  debug
+discovered-expanders    dot1x                   enhanced-hashing        environment             errdisable
+exec-timeout            fcoe                    fefd                    file                    fips
+hosts                   image                   interface               inventory               ip
+license                 link-bundle-utilization lldp                    load-balance            logging
+network-policy          ntp                     nve                     ovsdb-tables            parser-tree
+processes               qos                     qos-rate-adjust         queuing                 route-map
+sflow                   smartfabric             snmp                    spanning-tree           startup-configura
+system                  tech-support            telemetry               terminal                trace
+users                   version                 virtual-network         vlan                    vlt
+OS10# show license
+  status  Show switch license and digital fulfillment status
+
+OS10# show license status
+
+System Information
+---------------------------------------------------------
+Vendor Name          :   Dell EMC
+Product Name         :   S4128F-ON
+Hardware Version     :   A06
+Platform Name        :   x86_64-dellemc_s4128f_c2338-r0
+PPID                 :   TW0FFR83DNG0018R0114
+Service Tag          :   8JCKV43
+Product Base         :
+Product Serial Number:
+Product Part Number  :
+License Details
+----------------
+Software        :        OS10-Enterprise
+Version         :        10.5.0.4
+License Type    :        PERPETUAL
+License Duration:        Unlimited
+License Status  :        Active
+License location:        /mnt/license/8JCKV43.lic
+---------------------------------------------------------
+OS10# show vlt
+% Error: The command is not completed.
+OS10# show vlt
+  inconsistency      Inconsistent routes
+  mac-inconsistency  Show inconsistencies in dynamic MAC addresses learnt between VLT peers
+  <1-255>            VLT domain id
+
+OS10# show port-channel
+  summary  LAG status and configuration
+
+OS10# show port-channel summary
+
+Flags:  D - Down    I - member up but inactive    P - member up and active
+        U - Up (port-channel)    F - Fallback Activated
+--------------------------------------------------------------------------------
+Group Port-Channel           Type     Protocol  Member Ports
+--------------------------------------------------------------------------------
+128  port-channel128  (D)     Eth      DYNAMIC   1/1/27(I) 1/1/28(I) 1/1/29(I) 1/1/30(I)
+OS10#
+
+OS10# show vlt
+% Error: The command is not completed.
+OS10# show vlt
+  inconsistency      Inconsistent routes
+  mac-inconsistency  Show inconsistencies in dynamic MAC addresses learnt between VLT peers
+  <1-255>            VLT domain id
+
+OS10# show vlt
+% Error: The command is not completed.
+OS10# show vlt inconsistency
+% Error: The command is not completed.
+OS10# show vlt inconsistency
+  ip  IPv4 route
+
+OS10# show vlt inconsistency ip
+% Error: The command is not completed.
+OS10# show vlt inconsistency ip
+  mcache  Inconsistent routes
+
+OS10# show vlt inconsistency ip mcache
+Spanned Multicast Routing IIF Inconsistency
+Multicast Route                         LocalIIF       PeerIIF
+OS10# show vlt mac-inconsistency
+  virtual-network  Show virtual-network MAC inconsistency between VLT peers
+  vlan             Show VLAN MAC inconsistency between VLT peers
+  |                Pipe through a command
+  <cr>
+
+OS10# show vlt mac-inconsistency virtual-network
+
+Inconsistency check for Virtual-Network based MAC
+-------------------------------------------------
+
+No VLT Domain
+Skipping inconsistencies check.
+OS10# show vlt mac-inconsistency vlan
+
+Inconsistency check for VLAN based MAC
+--------------------------------------
+
+% ERROR - No VLT Domain
+OS10# show switch-operating-mode
+
+Switch-Operating-Mode : Full Switch Mode
+OS10#
+OS10#
+OS10#
+OS10# show running-configuration vlt
+OS10#
+OS10#
+OS10#
+OS10# show lldp neighbors
+Loc PortID          Rem Host Name        Rem Port Id                    Rem Chassis Id
+--------------------------------------------------------------------------------------
+ethernet1/1/1       Broadcom Adv. Dua... 5c:6f:69:f4:d8:81             5c:6f:69:f4:d8:81
+ethernet1/1/2       Broadcom Adv. Dua... 5c:6f:69:f4:b2:b1             5c:6f:69:f4:b2:b1
+ethernet1/1/20      Not Advertised       00:60:48:6a:3b:d4             00:60:48:6a:3b:d4
+ethernet1/1/23      Not Advertised       6c:fe:54:20:01:31             6c:fe:54:20:01:31
+ethernet1/1/27      OS10                 ethernet1/1/27                f0:d4:e2:59:ca:bb
+ethernet1/1/28      OS10                 ethernet1/1/28                f0:d4:e2:59:ca:bb
+ethernet1/1/29      OS10                 ethernet1/1/29                f0:d4:e2:59:ca:bb
+ethernet1/1/3       Broadcom Adv. Dua... 5c:6f:69:f4:13:21             5c:6f:69:f4:13:21
+ethernet1/1/30      OS10                 ethernet1/1/30                f0:d4:e2:59:ca:bb
+mgmt1/1/1           HP 5400 ZL2 CORE     34                            14:58:d0:db:c3:00
+OS10#
+OS10#
+OS10#
+OS10#
+OS10# show port-channel summary
+
+Flags:  D - Down    I - member up but inactive    P - member up and active
+        U - Up (port-channel)    F - Fallback Activated
+--------------------------------------------------------------------------------
+Group Port-Channel           Type     Protocol  Member Ports
+--------------------------------------------------------------------------------
+128  port-channel128  (D)     Eth      DYNAMIC   1/1/27(I) 1/1/28(I) 1/1/29(I) 1/1/30(I)
+OS10# show running-configuration interface port-channel 128
+!
+interface port-channel128
+ no shutdown
+ switchport access vlan 1
+OS10#
+OS10#
+OS10# show running-configuration interface ethernet 1/1/27
+!
+interface ethernet1/1/27
+ no shutdown
+ channel-group 128 mode active
+ no switchport
+ flowcontrol receive on
+OS10#
+OS10#
+OS10#
+OS10# show running-configuration
+! Version 10.5.0.4
+! Last configuration change at Mar  19 23:12:09 2024
+!
+ip vrf default
+!
+interface breakout 1/1/25 map 100g-1x
+interface breakout 1/1/26 map 100g-1x
+iscsi enable
+iscsi target port 860
+iscsi target port 3260
+system-user linuxadmin password $6$5DdOHYg5$JCE1vMSmkQOrbh31U74PIPv7lyOgRmba1IxhkYibppMXs1KM4Y.gbTPcxyMP/PHUkMc5r
+username admin password $6$q9QBeYjZ$jfxzVqGhkxX3smxJSH9DDz7/3OJc6m5wjF8nnLD7/VKx8SloIhp4NoGZs0I/UNwh8WVuxwfd9q4pW
+username tburns password $6$rounds=656000$M6/rwmZwghebn3Mx$de2cKW9XrACFqZe4D/c3BK2vwo3fzOe5KwDcAcqWOCLBGCCiwq0W41
+aaa authentication login default local
+aaa authentication login console local
+!
+class-map type application class-iscsi
+!
+policy-map type application policy-iscsi
+!
+interface vlan1
+ no shutdown
+!
+interface port-channel128
+ no shutdown
+ switchport access vlan 1
+!
+interface mgmt1/1/1
+ no shutdown
+ no ip address dhcp
+ ip address 10.10.10.22/24
+ ipv6 address autoconfig
+!
+interface ethernet1/1/1
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/2
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/3
+ no shutdown
+ switchport access vlan 1
+OS10# ping 10.10.10.23
+PING 10.10.10.23 (10.10.10.23) 56(84) bytes of data.
+64 bytes from 10.10.10.23: icmp_seq=3 ttl=64 time=0.119 ms
+64 bytes from 10.10.10.23: icmp_seq=1 ttl=64 time=2027 ms
+64 bytes from 10.10.10.23: icmp_seq=2 ttl=64 time=1024 ms
+64 bytes from 10.10.10.23: icmp_seq=4 ttl=64 time=0.132 ms
+^C
+--- 10.10.10.23 ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3051ms
+rtt min/avg/max/mdev = 0.119/763.094/2027.899/841.451 ms, pipe 3
+OS10#
+OS10#
+OS10#
+OS10# show ip interface brief | except una
+Interface Name            IP-Address          OK       Method       Status     Protocol
+=========================================================================================
+Management 1/1/1           10.10.10.22/24      YES      manual       up          up
+OS10#
+OS10#
+OS10# ping 10.10.10.21
+PING 10.10.10.21 (10.10.10.21) 56(84) bytes of data.
+64 bytes from 10.10.10.21: icmp_seq=1 ttl=64 time=2000 ms
+64 bytes from 10.10.10.21: icmp_seq=2 ttl=64 time=992 ms
+64 bytes from 10.10.10.21: icmp_seq=3 ttl=64 time=0.125 ms
+64 bytes from 10.10.10.21: icmp_seq=4 ttl=64 time=0.138 ms
+^C
+--- 10.10.10.21 ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3024ms
+rtt min/avg/max/mdev = 0.125/748.227/2000.474/828.693 ms, pipe 2
+OS10# ping 10.10.10.23
+PING 10.10.10.23 (10.10.10.23) 56(84) bytes of data.
+64 bytes from 10.10.10.23: icmp_seq=1 ttl=64 time=0.153 ms
+64 bytes from 10.10.10.23: icmp_seq=2 ttl=64 time=0.157 ms
+^C
+--- 10.10.10.23 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1016ms
+rtt min/avg/max/mdev = 0.153/0.155/0.157/0.002 ms
+OS10#
+OS10#
+OS10#
+OS10#
+OS10# show running-configuration
+! Version 10.5.0.4
+! Last configuration change at Mar  19 23:12:09 2024
+!
+ip vrf default
+!
+interface breakout 1/1/25 map 100g-1x
+interface breakout 1/1/26 map 100g-1x
+iscsi enable
+iscsi target port 860
+iscsi target port 3260
+system-user linuxadmin password $6$5DdOHYg5$JCE1vMSmkQOrbh31U74PIPv7lyOgRmba1IxhkYibppMXs1KM4Y.gbTPcxyMP/PHUkMc5r
+username admin password $6$q9QBeYjZ$jfxzVqGhkxX3smxJSH9DDz7/3OJc6m5wjF8nnLD7/VKx8SloIhp4NoGZs0I/UNwh8WVuxwfd9q4pW
+username tburns password $6$rounds=656000$M6/rwmZwghebn3Mx$de2cKW9XrACFqZe4D/c3BK2vwo3fzOe5KwDcAcqWOCLBGCCiwq0W41
+aaa authentication login default local
+aaa authentication login console local
+!
+class-map type application class-iscsi
+!
+policy-map type application policy-iscsi
+!
+interface vlan1
+ no shutdown
+!
+interface port-channel128
+ no shutdown
+ switchport access vlan 1
+!
+interface mgmt1/1/1
+ no shutdown
+ no ip address dhcp
+ ip address 10.10.10.22/24
+ ipv6 address autoconfig
+!
+interface ethernet1/1/1
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/2
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/3
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/4
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/5
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/6
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/7
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/8
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/9
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/10
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/11
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/12
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/13
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/14
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/15
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/16
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/17
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/18
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/19
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/20
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/21
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/22
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/23
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/24
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/25
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/26
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/27
+ no shutdown
+ channel-group 128 mode active
+ no switchport
+ flowcontrol receive on
+!
+interface ethernet1/1/28
+ no shutdown
+ channel-group 128 mode active
+ no switchport
+ flowcontrol receive on
+!
+interface ethernet1/1/29
+ no shutdown
+ channel-group 128 mode active
+ no switchport
+ flowcontrol receive on
+!
+interface ethernet1/1/30
+ no shutdown
+ channel-group 128 mode active
+ no switchport
+ flowcontrol receive on
+!
+management route 0.0.0.0/0 10.10.10.1
+!
+snmp-server contact "Contact Support"
+!
+telemetry
+OS10#
+OS10# show command-history
+    1    Thu Jun  16 23:07:57 UTC 2022  d
+    2    Thu Jun  16 23:08:12 UTC 2022  show interface mg                                                        mt
+    3    Thu Jun  16 23:08:18 UTC 2022  configure termina                                                        l
+    4    Thu Jun  16 23:08:21 UTC 2022  interface port-ch                                                        annel 128
+    5    Thu Jun  16 23:08:25 UTC 2022  exit
+    6    Thu Jun  16 23:08:32 UTC 2022  interface range e                                                        thernet 1/1/27-1/1/30
+    7    Thu Jun  16 23:08:38 UTC 2022  channel-group 128                                                         mode active
+    8    Thu Jun  16 23:08:46 UTC 2022  do write memory
+    9    Thu Jun  16 23:08:51 UTC 2022  do show loogin
+   10    Thu Jun  16 23:08:54 UTC 2022  exit
+   11    Thu Jun  16 23:09:04 UTC 2022  do show mac addre                                                        ss-table vlan 1
+   12    Thu Jun  16 23:09:11 UTC 2022  do show mac addre                                                        ss-table vlan 1
+   13    Thu Jun  16 23:09:12 UTC 2022  do show mac addre                                                        ss-table vlan 1
+   14    Thu Jun  16 23:10:56 UTC 2022  do write memory
+   15    Thu Jun  16 23:13:24 UTC 2022  show ver
+   16    Thu Jun  16 23:13:27 UTC 2022  do how ver
+   17    Thu Jun  16 23:13:29 UTC 2022  do how ver
+   18    Thu Jun  16 23:13:32 UTC 2022  do show version
+   19    Thu Jun  16 23:13:53 UTC 2022  interface mgmt 1/                                                        1
+   20    Thu Jun  16 23:14:34 UTC 2022  interface mgmt 1/                                                        1/1
+   21    Thu Jun  16 23:15:06 UTC 2022  interface mgmt 1/                                                        1/1
+   22    Thu Jun  16 23:15:17 UTC 2022  ip address 10.10.                                                        10.22/24
+   23    Thu Jun  16 23:15:22 UTC 2022  show configuratio                                                        n
+   24    Thu Jun  16 23:15:33 UTC 2022  no ip address dhcp
+   25    Thu Jun  16 23:15:45 UTC 2022  ip address 10.10.10.22/24
+   26    Thu Jun  16 23:15:52 UTC 2022  exit
+   27    Thu Jun  16 23:16:31 UTC 2022  show run
+   28    Thu Jun  16 23:16:33 UTC 2022  show run
+   29    Thu Jun  16 23:16:35 UTC 2022  do show running-configuration
+   30    Thu Jun  16 23:17:59 UTC 2022  management route 0.0.0.0/0 10.10.10.1
+   31    Thu Jun  16 23:18:02 UTC 2022  ping 4.2.2.2
+   32    Thu Jun  16 23:18:10 UTC 2022  do write memory
+   33    Fri Jun  17 00:32:34 UTC 2022  configure terminal
+   34    Fri Jun  17 00:32:42 UTC 2022  no smartfabric l3fabric
+   35    Tue Mar  19 23:07:40 UTC 2024  show running-configuration
+   36    Tue Mar  19 23:11:09 UTC 2024  configure terminal
+   37    Tue Mar  19 23:11:36 UTC 2024  username tburns password ***** role sysadmin
+   38    Tue Mar  19 23:11:57 UTC 2024  username tburns password ***** role sysadmin
+   39    Tue Mar  19 23:12:07 UTC 2024  username tburns password ***** role sysadmin
+   40    Tue Mar  19 23:25:11 UTC 2024  exit
+   41    Tue Mar  19 23:25:17 UTC 2024  show system
+   42    Tue Mar  19 23:25:40 UTC 2024  show vlan
+   43    Tue Mar  19 23:25:48 UTC 2024  show license
+   44    Tue Mar  19 23:25:56 UTC 2024  show license status
+   45    Tue Mar  19 23:26:09 UTC 2024  show vlt
+   46    Tue Mar  19 23:26:37 UTC 2024  show port-channel summary
+   47    Tue Mar  19 23:45:27 UTC 2024  show vlt
+   48    Tue Mar  19 23:45:35 UTC 2024  show vlt
+   49    Tue Mar  19 23:46:06 UTC 2024  show vlt inconsistency
+   50    Tue Mar  19 23:46:10 UTC 2024  show vlt inconsistency ip
+   51    Tue Mar  19 23:46:16 UTC 2024  show vlt inconsistency ip mcache
+   52    Tue Mar  19 23:46:29 UTC 2024  show vlt mac-inconsistency virtual-network
+   53    Tue Mar  19 23:46:39 UTC 2024  show vlt mac-inconsistency vlan
+   54    Tue Mar  19 23:48:49 UTC 2024  show switch-operating-mode
+   55    Tue Mar  19 23:48:52 UTC 2024  show running-configuration vlt
+   56    Tue Mar  19 23:48:57 UTC 2024  show lldp neighbors
+   57    Tue Mar  19 23:49:11 UTC 2024  show port-channel summary
+   58    Tue Mar  19 23:49:32 UTC 2024  show running-configuration interface port-channel 128
+   59    Tue Mar  19 23:49:41 UTC 2024  show running-configuration interface ethernet 1/1/27
+   60    Tue Mar  19 23:50:01 UTC 2024  show running-configuration
+   61    Tue Mar  19 23:50:21 UTC 2024  ping 10.10.10.23
+   62    Tue Mar  19 23:50:47 UTC 2024  show ip interface brief | except una
+   63    Tue Mar  19 23:51:44 UTC 2024  ping 10.10.10.21
+   64    Tue Mar  19 23:51:51 UTC 2024  ping 10.10.10.23
+   65    Tue Mar  19 23:54:19 UTC 2024  show running-configuration
+   66    Tue Mar  19 23:55:48 UTC 2024  show command-history
+
+OS10#
+OS10# show lldp neighbors
+Loc PortID          Rem Host Name        Rem Port Id                    Rem Chassis Id
+--------------------------------------------------------------------------------------
+ethernet1/1/1       Broadcom Adv. Dua... 5c:6f:69:f4:d8:81             5c:6f:69:f4:d8:81
+ethernet1/1/2       Broadcom Adv. Dua... 5c:6f:69:f4:b2:b1             5c:6f:69:f4:b2:b1
+ethernet1/1/20      Not Advertised       00:60:48:6a:3b:d4             00:60:48:6a:3b:d4
+ethernet1/1/23      Not Advertised       6c:fe:54:20:01:31             6c:fe:54:20:01:31
+ethernet1/1/27      OS10                 ethernet1/1/27                f0:d4:e2:59:ca:bb
+ethernet1/1/28      OS10                 ethernet1/1/28                f0:d4:e2:59:ca:bb
+ethernet1/1/29      OS10                 ethernet1/1/29                f0:d4:e2:59:ca:bb
+ethernet1/1/3       Broadcom Adv. Dua... 5c:6f:69:f4:13:21             5c:6f:69:f4:13:21
+ethernet1/1/30      OS10                 ethernet1/1/30                f0:d4:e2:59:ca:bb
+mgmt1/1/1           HP 5400 ZL2 CORE     34                            14:58:d0:db:c3:00
+OS10#
+OS10#
+OS10#
+OS10#
+OS10# show running-configuration interface port-channel 128
+!
+interface port-channel128
+ no shutdown
+ switchport access vlan 1
+OS10#
+OS10#
+OS10# show running-configuration interface ethernet 1/1/27
+!
+interface ethernet1/1/27
+ no shutdown
+ channel-group 128 mode active
+ no switchport
+ flowcontrol receive on
+OS10# show running-configuration
+! Version 10.5.0.4
+! Last configuration change at Mar  19 23:12:09 2024
+!
+ip vrf default
+!
+interface breakout 1/1/25 map 100g-1x
+interface breakout 1/1/26 map 100g-1x
+iscsi enable
+iscsi target port 860
+iscsi target port 3260
+system-user linuxadmin password $6$5DdOHYg5$JCE1vMSmkQOrbh31U74PIPv7lyOgRmba1IxhkYibppMXs1KM4Y.gbTPcxyMP/PHUkMc5rLv9Sfv3ALtB61
+username admin password $6$q9QBeYjZ$jfxzVqGhkxX3smxJSH9DDz7/3OJc6m5wjF8nnLD7/VKx8SloIhp4NoGZs0I/UNwh8WVuxwfd9q4pW5BKH. role sysadmin priv-lvl 15
+username tburns password $6$rounds=656000$M6/rwmZwghebn3Mx$de2cKW9XrACFqZe4D/c3BK2vwo3fzOe5KwDcAcqWOCLBGCCiwq0W41Q0RuLDmDX8U4shFoD4TeY7QoG1J1 role sysadmin priv-lvl 15
+aaa authentication login default local
+aaa authentication login console local
+!
+class-map type application class-iscsi
+!
+policy-map type application policy-iscsi
+!
+interface vlan1
+ no shutdown
+!
+interface port-channel128
+ no shutdown
+ switchport access vlan 1
+!
+interface mgmt1/1/1
+ no shutdown
+ no ip address dhcp
+ ip address 10.10.10.22/24
+ ipv6 address autoconfig
+!
+interface ethernet1/1/1
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/2
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/3
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/4
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/5
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/6
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/7
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/8
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/9
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/10
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/11
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/12
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/13
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/14
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/15
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/16
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/17
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/18
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/19
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/20
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/21
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/22
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/23
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/24
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/25
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/26
+ no shutdown
+ switchport access vlan 1
+ flowcontrol receive on
+!
+interface ethernet1/1/27
+ no shutdown
+ channel-group 128 mode active
+ no switchport
+ flowcontrol receive on
+!
+interface ethernet1/1/28
+ no shutdown
+ channel-group 128 mode active
+ no switchport
+ flowcontrol receive on
+!
+interface ethernet1/1/29
+ no shutdown
+ channel-group 128 mode active
+ no switchport
+ flowcontrol receive on
+!
+interface ethernet1/1/30
+ no shutdown
+ channel-group 128 mode active
+ no switchport
+ flowcontrol receive on
+!
+management route 0.0.0.0/0 10.10.10.1
+!
+snmp-server contact "Contact Support"
+!
+telemetry
+  OS10#
+OS10#
+OS10# configure terminal
+OS10(config)# hostname F10-SW2
+F10-SW2(config)# do show lldp neighbors
+Loc PortID          Rem Host Name        Rem Port Id                    Rem Chassis Id
+--------------------------------------------------------------------------------------
+ethernet1/1/1       Broadcom Adv. Dua... 5c:6f:69:f4:d8:81             5c:6f:69:f4:d8:81
+ethernet1/1/2       Broadcom Adv. Dua... 5c:6f:69:f4:b2:b1             5c:6f:69:f4:b2:b1
+ethernet1/1/20      Not Advertised       00:60:48:6a:3b:d4             00:60:48:6a:3b:d4
+ethernet1/1/23      Not Advertised       6c:fe:54:20:01:31             6c:fe:54:20:01:31
+ethernet1/1/27      F10-SW1              ethernet1/1/27                f0:d4:e2:59:ca:bb
+ethernet1/1/28      F10-SW1              ethernet1/1/28                f0:d4:e2:59:ca:bb
+ethernet1/1/29      F10-SW1              ethernet1/1/29                f0:d4:e2:59:ca:bb
+ethernet1/1/3       Broadcom Adv. Dua... 5c:6f:69:f4:13:21             5c:6f:69:f4:13:21
+ethernet1/1/30      F10-SW1              ethernet1/1/30                f0:d4:e2:59:ca:bb
+ethernet1/1/8       HP 5400 ZL2 CORE     79                            14:58:d0:db:c3:00
+mgmt1/1/1           HP 5400 ZL2 CORE     34                            14:58:d0:db:c3:00
+F10-SW2(config)# do show port-channel summary
+
+Flags:  D - Down    I - member up but inactive    P - member up and active
+        U - Up (port-channel)    F - Fallback Activated
+--------------------------------------------------------------------------------
+Group Port-Channel           Type     Protocol  Member Ports
+--------------------------------------------------------------------------------
+128  port-channel128  (U)     Eth      DYNAMIC   1/1/27(P) 1/1/28(P) 1/1/29(P) 1/1/30(P)
+F10-SW2(config)# wred me
+F10-SW2(config-wred)# ebd
+% Error: Unrecognized command.
+F10-SW2(config-wred)# end
+F10-SW2# write memory
+F10-SW2# show version
+Dell EMC Networking OS10 Enterprise
+Copyright (c) 1999-2020 by Dell Inc. All Rights Reserved.
+OS Version: 10.5.0.4
+Build Version: 10.5.0.4.638
+Build Time: 2020-01-30T21:08:56+0000
+System Type: S4128F-ON
+Architecture: x86_64
+Up Time: 54 weeks 20:04:44
+F10-SW2#
+F10-SW2# show license status
+
+System Information
+---------------------------------------------------------
+Vendor Name          :   Dell EMC
+Product Name         :   S4128F-ON
+Hardware Version     :   A06
+Platform Name        :   x86_64-dellemc_s4128f_c2338-r0
+PPID                 :   TW0FFR83DNG0018R0114
+Service Tag          :   8JCKV43
+Product Base         :
+Product Serial Number:
+Product Part Number  :
+License Details
+----------------
+Software        :        OS10-Enterprise
+Version         :        10.5.0.4
+License Type    :        PERPETUAL
+License Duration:        Unlimited
+License Status  :        Active
+License location:        /mnt/license/8JCKV43.lic
+---------------------------------------------------------
+F10-SW2#
+F10-SW2#
+F10-SW2#
+F10-SW2# copy config://startup.xml ftp://tburns:XCVbgh78&*@10.10.20.20/
+F10-SW2#
+F10-SW2# copy config://startup.xml ftp://tburns:*****@10.10.20.20/sw2_backup.xlm
+F10-SW2# copy config://startup.xml ftp://tburns:XCVbgh78&*@10.10.20.20/sw2_backup.xml
+F10-SW2# ping 10.10.20.20
+PING 10.10.20.20 (10.10.20.20) 56(84) bytes of data.
+64 bytes from 10.10.20.20: icmp_seq=1 ttl=127 time=0.425 ms
+64 bytes from 10.10.20.20: icmp_seq=2 ttl=127 time=0.281 ms
+64 bytes from 10.10.20.20: icmp_seq=3 ttl=127 time=0.315 ms
+64 bytes from 10.10.20.20: icmp_seq=4 ttl=127 time=0.296 ms
+64 bytes from 10.10.20.20: icmp_seq=5 ttl=127 time=0.327 ms
+64 bytes from 10.10.20.20: icmp_seq=6 ttl=127 time=0.350 ms
+64 bytes from 10.10.20.20: icmp_seq=7 ttl=127 time=0.381 ms
+64 bytes from 10.10.20.20: icmp_seq=8 ttl=127 time=0.434 ms
+64 bytes from 10.10.20.20: icmp_seq=9 ttl=127 time=0.405 ms
+64 bytes from 10.10.20.20: icmp_seq=10 ttl=127 time=0.355 ms
+64 bytes from 10.10.20.20: icmp_seq=11 ttl=127 time=0.416 ms
+64 bytes from 10.10.20.20: icmp_seq=12 ttl=127 time=0.400 ms
+64 bytes from 10.10.20.20: icmp_seq=13 ttl=127 time=0.309 ms
+64 bytes from 10.10.20.20: icmp_seq=14 ttl=127 time=0.312 ms
+64 bytes from 10.10.20.20: icmp_seq=15 ttl=127 time=0.382 ms
+64 bytes from 10.10.20.20: icmp_seq=16 ttl=127 time=0.372 ms
+64 bytes from 10.10.20.20: icmp_seq=17 ttl=127 time=0.302 ms
+64 bytes from 10.10.20.20: icmp_seq=18 ttl=127 time=0.328 ms
+64 bytes from 10.10.20.20: icmp_seq=19 ttl=127 time=0.450 ms
+64 bytes from 10.10.20.20: icmp_seq=20 ttl=127 time=0.302 ms
+64 bytes from 10.10.20.20: icmp_seq=21 ttl=127 time=0.368 ms
+64 bytes from 10.10.20.20: icmp_seq=22 ttl=127 time=0.337 ms
+64 bytes from 10.10.20.20: icmp_seq=23 ttl=127 time=0.311 ms
+64 bytes from 10.10.20.20: icmp_seq=24 ttl=127 time=0.316 ms
+64 bytes from 10.10.20.20: icmp_seq=25 ttl=127 time=0.456 ms
+64 bytes from 10.10.20.20: icmp_seq=26 ttl=127 time=0.339 ms
+64 bytes from 10.10.20.20: icmp_seq=27 ttl=127 time=0.302 ms
+64 bytes from 10.10.20.20: icmp_seq=28 ttl=127 time=0.333 ms
+64 bytes from 10.10.20.20: icmp_seq=29 ttl=127 time=0.328 ms
+64 bytes from 10.10.20.20: icmp_seq=30 ttl=127 time=0.465 ms
+64 bytes from 10.10.20.20: icmp_seq=31 ttl=127 time=0.340 ms
+64 bytes from 10.10.20.20: icmp_seq=32 ttl=127 time=0.320 ms
+64 bytes from 10.10.20.20: icmp_seq=33 ttl=127 time=0.316 ms
+64 bytes from 10.10.20.20: icmp_seq=34 ttl=127 time=0.298 ms
+64 bytes from 10.10.20.20: icmp_seq=35 ttl=127 time=0.322 ms
+64 bytes from 10.10.20.20: icmp_seq=36 ttl=127 time=0.404 ms
+64 bytes from 10.10.20.20: icmp_seq=37 ttl=127 time=0.320 ms
+64 bytes from 10.10.20.20: icmp_seq=38 ttl=127 time=0.323 ms
+64 bytes from 10.10.20.20: icmp_seq=39 ttl=127 time=0.340 ms
+64 bytes from 10.10.20.20: icmp_seq=40 ttl=127 time=0.328 ms
+64 bytes from 10.10.20.20: icmp_seq=41 ttl=127 time=0.383 ms
+64 bytes from 10.10.20.20: icmp_seq=42 ttl=127 time=0.462 ms
+64 bytes from 10.10.20.20: icmp_seq=43 ttl=127 time=0.491 ms
+64 bytes from 10.10.20.20: icmp_seq=44 ttl=127 time=0.363 ms
+64 bytes from 10.10.20.20: icmp_seq=45 ttl=127 time=0.432 ms
+64 bytes from 10.10.20.20: icmp_seq=46 ttl=127 time=0.377 ms
+64 bytes from 10.10.20.20: icmp_seq=47 ttl=127 time=0.318 ms
+64 bytes from 10.10.20.20: icmp_seq=48 ttl=127 time=0.369 ms
+64 bytes from 10.10.20.20: icmp_seq=49 ttl=127 time=0.502 ms
+64 bytes from 10.10.20.20: icmp_seq=50 ttl=127 time=0.373 ms
+64 bytes from 10.10.20.20: icmp_seq=51 ttl=127 time=0.333 ms
+64 bytes from 10.10.20.20: icmp_seq=52 ttl=127 time=0.321 ms
+64 bytes from 10.10.20.20: icmp_seq=53 ttl=127 time=0.322 ms
+64 bytes from 10.10.20.20: icmp_seq=54 ttl=127 time=0.364 ms
+64 bytes from 10.10.20.20: icmp_seq=55 ttl=127 time=0.600 ms
+64 bytes from 10.10.20.20: icmp_seq=56 ttl=127 time=0.320 ms
+64 bytes from 10.10.20.20: icmp_seq=57 ttl=127 time=0.414 ms
+64 bytes from 10.10.20.20: icmp_seq=58 ttl=127 time=0.301 ms
+64 bytes from 10.10.20.20: icmp_seq=59 ttl=127 time=0.309 ms
+64 bytes from 10.10.20.20: icmp_seq=60 ttl=127 time=0.461 ms
+64 bytes from 10.10.20.20: icmp_seq=61 ttl=127 time=0.431 ms
+64 bytes from 10.10.20.20: icmp_seq=62 ttl=127 time=0.419 ms
+64 bytes from 10.10.20.20: icmp_seq=63 ttl=127 time=0.332 ms
+64 bytes from 10.10.20.20: icmp_seq=64 ttl=127 time=0.321 ms
+64 bytes from 10.10.20.20: icmp_seq=65 ttl=127 time=0.321 ms
+64 bytes from 10.10.20.20: icmp_seq=66 ttl=127 time=0.502 ms
+64 bytes from 10.10.20.20: icmp_seq=67 ttl=127 time=0.388 ms
+64 bytes from 10.10.20.20: icmp_seq=68 ttl=127 time=0.401 ms
+64 bytes from 10.10.20.20: icmp_seq=69 ttl=127 time=0.352 ms
+64 bytes from 10.10.20.20: icmp_seq=70 ttl=127 time=0.337 ms
+64 bytes from 10.10.20.20: icmp_seq=71 ttl=127 time=0.478 ms
+64 bytes from 10.10.20.20: icmp_seq=72 ttl=127 time=0.637 ms
+64 bytes from 10.10.20.20: icmp_seq=73 ttl=127 time=0.400 ms
+64 bytes from 10.10.20.20: icmp_seq=74 ttl=127 time=0.323 ms
+64 bytes from 10.10.20.20: icmp_seq=75 ttl=127 time=0.324 ms
+64 bytes from 10.10.20.20: icmp_seq=76 ttl=127 time=0.433 ms
+64 bytes from 10.10.20.20: icmp_seq=77 ttl=127 time=0.330 ms
+64 bytes from 10.10.20.20: icmp_seq=78 ttl=127 time=0.422 ms
+64 bytes from 10.10.20.20: icmp_seq=79 ttl=127 time=0.419 ms
+64 bytes from 10.10.20.20: icmp_seq=80 ttl=127 time=0.303 ms
+64 bytes from 10.10.20.20: icmp_seq=81 ttl=127 time=0.393 ms
+64 bytes from 10.10.20.20: icmp_seq=82 ttl=127 time=0.328 ms
+64 bytes from 10.10.20.20: icmp_seq=83 ttl=127 time=0.334 ms
+64 bytes from 10.10.20.20: icmp_seq=84 ttl=127 time=0.345 ms
+64 bytes from 10.10.20.20: icmp_seq=85 ttl=127 time=0.333 ms
+64 bytes from 10.10.20.20: icmp_seq=86 ttl=127 time=0.333 ms
+64 bytes from 10.10.20.20: icmp_seq=87 ttl=127 time=0.437 ms
+64 bytes from 10.10.20.20: icmp_seq=88 ttl=127 time=0.323 ms
+64 bytes from 10.10.20.20: icmp_seq=89 ttl=127 time=0.328 ms
+64 bytes from 10.10.20.20: icmp_seq=90 ttl=127 time=0.337 ms
+64 bytes from 10.10.20.20: icmp_seq=91 ttl=127 time=0.363 ms
+64 bytes from 10.10.20.20: icmp_seq=92 ttl=127 time=0.321 ms
+64 bytes from 10.10.20.20: icmp_seq=93 ttl=127 time=0.317 ms
+64 bytes from 10.10.20.20: icmp_seq=94 ttl=127 time=0.315 ms
+64 bytes from 10.10.20.20: icmp_seq=95 ttl=127 time=0.402 ms
+64 bytes from 10.10.20.20: icmp_seq=96 ttl=127 time=0.331 ms
+64 bytes from 10.10.20.20: icmp_seq=97 ttl=127 time=0.335 ms
+64 bytes from 10.10.20.20: icmp_seq=98 ttl=127 time=0.331 ms
+^C
+--- 10.10.20.20 ping statistics ---
+98 packets transmitted, 98 received, 0% packet loss, time 99305ms
+rtt min/avg/max/mdev = 0.281/0.366/0.637/0.066 ms
+F10-SW2# copy config://startup.xml sftp://tburns:XCVbgh78&*@10.10.20.20/sw2_backup.xml
+F10-SW2#
+F10-SW2#
+F10-SW2# copy config://startup.xml sftp://tburns:*****@10.10.20.20/sw2_backup.xml
+F10-SW2# copy config://startup.xml sftp://tburns:XCVbgh78&*@10.10.20.20/sw2_backup.xml
+F10-SW2#
+F10-SW2#
+F10-SW2# show license status
+
+System Information
+---------------------------------------------------------
+Vendor Name          :   Dell EMC
+Product Name         :   S4128F-ON
+Hardware Version     :   A06
+Platform Name        :   x86_64-dellemc_s4128f_c2338-r0
+PPID                 :   TW0FFR83DNG0018R0114
+Service Tag          :   8JCKV43
+Product Base         :
+Product Serial Number:
+Product Part Number  :
+License Details
+----------------
+Software        :        OS10-Enterprise
+Version         :        10.5.0.4
+License Type    :        PERPETUAL
+License Duration:        Unlimited
+License Status  :        Active
+License location:        /mnt/license/8JCKV43.lic
+---------------------------------------------------------
+F10-SW2#
+F10-SW2# system "sudo /mnt/onie-boot/onie/tools/bin/onie-version"
+[sudo] password for admin:
+ONIE version        : 3.33.1.1-6
+ONIE vendor_id      : 674
+ONIE platform       : x86_64-dellemc_s4100_c2338-r0
+ONIE machine        : dellemc_s4100_c2338
+ONIE machine_rev    : 0
+ONIE arch           : x86_64
+ONIE config_version : 1
+ONIE build_date     : 2017-10-19T10:30-0700
+ONIE partition_type : gpt
+ONIE kernel_version : 4.1.28
+ONIE firmware       : auto
+ONIE switch_asic    : bcm
+ONIE skip_ethmgmt_macs: no
+F10-SW2# show system
+
+Node Id              : 1
+MAC                  : f0:d4:e2:7b:c4:04
+Number of MACs       : 128
+Up Time              : 54 weeks 20:25:28
+
+-- Unit 1 --
+Status                     : up
+System Identifier          : 1
+Down Reason                : user-triggered
+Digital Optical Monitoring : disable
+System Location LED        : off
+Required Type              : S4128
+Current Type               : S4128
+Hardware Revision          : A06
+Software Version           : 10.5.0.4
+Physical Ports             : 28x10GbE, 2x100GbE
+BIOS                          : 3.33.0.1-7
+System CPLD                   : 1.1
+Master CPLD                   : 1.0
+Slave CPLD                    : 0.7
+
+-- Power Supplies --
+PSU-ID  Status      Type    AirFlow   Fan  Speed(rpm)  Status
+----------------------------------------------------------------
+1       up          AC      REVERSE   1    11600       up
+
+2       up          AC      REVERSE   1    11536       up
+
+
+-- Fan Status --
+FanTray  Status      AirFlow   Fan  Speed(rpm)  Status
+----------------------------------------------------------------
+1        up          REVERSE   1    11045       up
+
+2        up          REVERSE   1    11045       up
+
+3        up          REVERSE   1    11014       up
+
+4        up          REVERSE   1    11014       up
+
+
+F10-SW2# system bash
+admin@F10-SW2:~$
+admin@F10-SW2:~$
+admin@F10-SW2:~$ dmesg | grep 3IE3
+[    2.026976] ata5.00: ATA-8: InnoDisk Corp. - mSATA 3IE3, S16425c1, max UDMA/133
+admin@F10-SW2:~$
