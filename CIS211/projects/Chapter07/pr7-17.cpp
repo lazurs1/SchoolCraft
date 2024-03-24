@@ -20,7 +20,7 @@ int main()
 
 	cout << fixed << showpoint << setprecision(2);
 	do
-	{
+	{     
 		displayMenu();
 		choice = getChoice(MAX_CHOICE);  // This returns only '1' - '7'
 		switch(choice)

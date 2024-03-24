@@ -32,17 +32,20 @@ using namespace std;
     //    return "test++_+" + aaa;
     //    }
     //enum Roster {Tom=0, Sharon, Bill, Teresa, John};
+
+    enum daze {monday, tuesday, wed,thurs,fri,sat,sun};
     int main()
     {   
+        cout << monday;
+        cout << daze + 1;
+        //const int SIZE = 5;
+        //int numbers[SIZE];
+        //for (int idx = 0; idx < SIZE; idx++)
+        //    numbers[idx] = idx;
 
-        const int SIZE = 5;
-        int numbers[SIZE];
-        for (int idx = 0; idx < SIZE; idx++)
-            numbers[idx] = idx;
-
-        cout << "\nHere are the array elements: \n\n";
-        for (int idx = 0; idx < SIZE; idx++)
-            cout << numbers[idx] << endl;
+        //cout << "\nHere are the array elements: \n\n";
+        //for (int idx = 0; idx < SIZE; idx++)
+        //    cout << numbers[idx] << endl;
 
         cout << "------------------------------------------------------";
         ////Switch
@@ -332,31 +335,31 @@ using namespace std;
     //cout << "Done. \n";
 
 
-    double x, y, quotient, total = 0.0;
-    for (x = 1, y = 30; x <= 30; x++, y--)
-    {   
-        quotient = x / y;
-        cout << "x=" << x << " y=" << y << " quot=" << quotient << "\n";
-        total += quotient;
-    }
-    cout << "total: " << total;
+    //double x, y, quotient, total = 0.0;
+    //for (x = 1, y = 30; x <= 30; x++, y--)
+    //{   
+    //    quotient = x / y;
+    //    cout << "x=" << x << " y=" << y << " quot=" << quotient << "\n";
+    //    total += quotient;
+    //}
+    //cout << "total: " << total;
 
 
-    for (int dnom = 2; dnom <= 1024; dnom *= 2)
-    {
-        total = +1.0 / dnom;
-    }
-    cout << "\nTotal = " << total;
+    //for (int dnom = 2; dnom <= 1024; dnom *= 2)
+    //{
+    //    total = +1.0 / dnom;
+    //}
+    //cout << "\nTotal = " << total;
 
 
-    cout << "\n-----------------------------------------\n";
-    int zzz = 4;
-    int &i2 = zzz;
-    cout << zzz << " zzz\n";
-    cout << i2 << " i2\n";
-    i2 = 243234;
-    cout << "\n-----------------------------------------\n";
-    cout << zzz << " zzz\n";
-    cout << i2 << " i2\n";
+    //cout << "\n-----------------------------------------\n";
+    //int zzz = 4;
+    //int &i2 = zzz;
+    //cout << zzz << " zzz\n";
+    //cout << i2 << " i2\n";
+    //i2 = 243234;
+    //cout << "\n-----------------------------------------\n";
+    //cout << zzz << " zzz\n";
+    //cout << i2 << " i2\n";
 
 }
